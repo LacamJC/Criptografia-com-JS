@@ -49,9 +49,10 @@ const alfabeto = [
 ];
 
 
+
 function crypt(frase) {
-    let res = frase.toUpperCase().split('')
-    
+    let res = frase.split('')
+
     let newPass = []
 
 
@@ -69,4 +70,17 @@ function crypt(frase) {
 }
 
 
-export default { crypt }
+if (process.argv[2]) {
+    const textoParaCriptografar = process.argv[2];
+    console.log(crypt(textoParaCriptografar));
+  } else {
+    console.log('Por favor, forneça um texto para criptografar.');
+    console.log('Exemplo: node crypt.js "Seu texto aqui"');
+  }
+  
+
+crypt('Teste')
+
+
+
+
